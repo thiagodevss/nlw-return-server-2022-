@@ -6,8 +6,8 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
+  provider = "sqlite"
+  url      = "file:./dev.db"
 }
 
 model Feedback {
@@ -15,7 +15,6 @@ model Feedback {
   type       String
   comment    String
   screenshot String?
-
 
   @@map("feedbacks")
 }
